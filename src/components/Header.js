@@ -10,7 +10,7 @@ export default function Header() {
         aria-label="main navigation"
       >
         <Link href="/">
-          <h1>The Blog Title</h1>
+          <h1>Modern Nomad</h1>
         </Link>
         <div>
           <Link href={`${typeof window !== "undefined" &&
