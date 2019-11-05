@@ -8,8 +8,16 @@ import blogStyles from "../../styles/pages/blog.scss";
 import Layout from '../../components/Layout'
 
 export default function Page(props) {
-  // TINA CMS Config ---------------------------
-
+// TINA CMS Config ---------------------------
+  function toMarkdownString(formValues) {
+    return (
+      '---\n' +
+      yaml.dump(formValues.frontmatter) +
+      '---\n' +
+      (formValues.markdownBody || '')
+    )
+  }
+  
   const cms = useCMS()
   const [post, form] = useCMSForm({
     id: props.fileRelativePath, // needs to be unique
@@ -65,7 +73,7 @@ export default function Page(props) {
       return cms.api.git
         .writeToDisk({
           fileRelativePath: props.fileRelativePath,
-          content: JSON.stringify({ title: formState.values.title }),
+          content: toMarkdownString(formState.values),
         })
         .then(() => {
           return cms.api.git.commit({
@@ -76,15 +84,6 @@ export default function Page(props) {
     },
   })
 
-  function toMarkdownString(formValues) {
-    return (
-      '---\n' +
-      yaml.dump(formValues.frontmatter) +
-      '---\n' +
-      (formValues.markdownBody || '')
-    )
-  }
-
   const writeToDisk = React.useCallback(formState => {
     cms.api.git.onChange({
       fileRelativePath: props.fileRelativePath,
@@ -94,7 +93,7 @@ export default function Page(props) {
 
   useWatchFormValues(form, writeToDisk)
 
-  // END Tina CMS config -----------------------------
+// END Tina CMS config -----------------------------
 
   function reformatDate(fullDate) {
     const date = new Date(fullDate)
