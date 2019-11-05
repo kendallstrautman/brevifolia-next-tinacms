@@ -1,9 +1,8 @@
 ---
-title: The truth about Doug-fir
 author: Grace Hopper
-date: 2019-07-09T16:04:44.000+00:00
-hero_image: ../static/sonja-punz-N47B_zibNGo-unsplash.jpg
-
+date: '2019-07-09T16:04:44.000Z'
+hero_image: ../static/usa-1.jpg
+title: An otherworldly desert
 ---
 Tousled aesthetic retro, tofu put a bird on it marfa lomo you probably haven't heard of them cronut venmo four dollar toast. Asymmetrical locavore portland flexitarian. Tattooed edison bulb franzen, wayfarers enamel pin pok pok crucifix asymmetrical brooklyn irony gastropub fixie. Gentrify meggings edison bulb migas fanny pack yuccie. Keytar ugh shaman sriracha. Cardigan succulents listicle meditation, next level fixie snackwave raw denim palo santo bitters hashtag lyft normcore hot chicken.
 
