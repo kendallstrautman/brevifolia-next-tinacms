@@ -2,9 +2,9 @@ import Layout from "../components/Layout";
 import infoStyles from "../styles/pages/info.scss";
 import data from "../../config.json";
 
-export default function Info(props) {
+export default function Info() {
   return (
-    <Layout pathname={props.url.pathname}>
+    <Layout pathname='info'>
       <section className={infoStyles.info_blurb}>
         <h2>
           This blog was created using{" "}

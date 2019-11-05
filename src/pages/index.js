@@ -2,16 +2,14 @@ import Layout from "../components/Layout";
 import BlogList from "../components/BlogList";
 import "../styles/index.scss";
 
-const Index = (props) => {
-  console.log(props)
+const Index = () => {
   return (
-    <Layout>
+    <Layout pathname="/">
       <section>
         <BlogList />
       </section>
       </Layout>
   );
 };
-
 
 export default Index;

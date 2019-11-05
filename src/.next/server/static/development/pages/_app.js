@@ -1134,6 +1134,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var tinacms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tinacms */ "tinacms");
 /* harmony import */ var tinacms__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(tinacms__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _tinacms_git_client__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @tinacms/git-client */ "@tinacms/git-client");
+/* harmony import */ var _tinacms_git_client__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_tinacms_git_client__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
@@ -1145,15 +1147,24 @@ var _jsxFileName = "/Users/kendallstrautman/Forestry/tina/tina-test-sites/brevif
 
 
 
+
 var MyApp =
 /*#__PURE__*/
 function (_App) {
   Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(MyApp, _App);
 
   function MyApp() {
+    var _this;
+
     Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, MyApp);
 
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(MyApp).apply(this, arguments));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(MyApp).call(this));
+    _this.cms = new tinacms__WEBPACK_IMPORTED_MODULE_8__["TinaCMS"]();
+    var client = new _tinacms_git_client__WEBPACK_IMPORTED_MODULE_9__["GitClient"]('http://localhost:3001/___tina');
+
+    _this.cms.registerApi('git', client);
+
+    return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(MyApp, [{
@@ -1162,18 +1173,17 @@ function (_App) {
       var _this$props = this.props,
           Component = _this$props.Component,
           pageProps = _this$props.pageProps;
-      var cms = new tinacms__WEBPACK_IMPORTED_MODULE_8__["TinaCMS"]();
       return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(tinacms__WEBPACK_IMPORTED_MODULE_8__["Tina"], {
-        cms: cms,
+        cms: this.cms,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 16
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 17
         },
         __self: this
       })));
@@ -1196,6 +1206,17 @@ function (_App) {
 
 module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_app.js");
 
+
+/***/ }),
+
+/***/ "@tinacms/git-client":
+/*!**************************************!*\
+  !*** external "@tinacms/git-client" ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@tinacms/git-client");
 
 /***/ }),
 
