@@ -6,7 +6,18 @@ export default function Layout(props) {
 
   return (
     <section
-        className={`${layoutStyles.layout} ${
+        
+    >
+      <Header />
+      <div className={layoutStyles.content}>{props.children}</div>
+    </section>
+  );
+}
+
+/**
+ * 
+ * 
+ * className={`${layoutStyles.layout} ${
           props.pathname == "/info" &&
           layoutStyles.info_page}`}
         style={{
@@ -14,9 +25,4 @@ export default function Layout(props) {
           props.pathname == "/info" && 
           data.primary_color}`
   }}
-    >
-      <Header />
-      <div className={layoutStyles.content}>{props.children}</div>
-    </section>
-  );
-}
+ */

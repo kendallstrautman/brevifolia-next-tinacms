@@ -7,6 +7,7 @@
   "author": "@kendallstraut",
   "scripts": {
     "dev": "next src",
+    "develop": "concurrently \"next src\" \"tina-git-server 3001\"",
     "build": "next build src",
     "start": "next start src",
     "export": "next export src",
@@ -14,15 +15,21 @@
     "forestry-preview": "next src -p 8080 -H 0.0.0.0"
   },
   "dependencies": {
+    "@tinacms/api-git": "^0.1.1-canary.182",
+    "@tinacms/git-client": "^0.2.0",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
+    "concurrently": "^5.0.0",
     "gray-matter": "^4.0.2",
+    "moment": "^2.24.0",
     "next": "^9.0.2",
     "node-sass": "^4.12.0",
     "raw-loader": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-markdown": "^4.1.0",
+    "react-tinacms": "^0.6.0",
+    "tinacms": "^0.6.0",
     "webpack": "^4.37.0"
   },
   "devDependencies": {

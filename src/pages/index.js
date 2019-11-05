@@ -3,12 +3,13 @@ import BlogList from "../components/BlogList";
 import "../styles/index.scss";
 
 const Index = (props) => {
+  console.log(props)
   return (
-    <Layout pathname={props.url.pathname}>
+    <Layout>
       <section>
         <BlogList />
       </section>
-    </Layout>
+      </Layout>
   );
 };
 

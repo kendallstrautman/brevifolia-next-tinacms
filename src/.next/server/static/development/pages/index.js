@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1294,7 +1294,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_markdown__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-markdown */ "react-markdown");
 /* harmony import */ var react_markdown__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_markdown__WEBPACK_IMPORTED_MODULE_5__);
 
-var _jsxFileName = "/Users/kendallstrautman/Forestry/initial-project/starter-blog-next/src/components/BlogList.js";
+var _jsxFileName = "/Users/kendallstrautman/Forestry/tina/tina-test-sites/brevifolia-next-tinacms/src/components/BlogList.js";
 
 
 
@@ -1441,7 +1441,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _styles_components_header_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/components/header.scss */ "./styles/components/header.scss");
 /* harmony import */ var _styles_components_header_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_components_header_scss__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/kendallstrautman/Forestry/initial-project/starter-blog-next/src/components/Header.js";
+var _jsxFileName = "/Users/kendallstrautman/Forestry/tina/tina-test-sites/brevifolia-next-tinacms/src/components/Header.js";
 
 
 
@@ -1516,17 +1516,13 @@ __webpack_require__.r(__webpack_exports__);
 var _config_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../config.json */ "../config.json", 1);
 /* harmony import */ var _styles_components_layout_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/components/layout.scss */ "./styles/components/layout.scss");
 /* harmony import */ var _styles_components_layout_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_components_layout_scss__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/kendallstrautman/Forestry/initial-project/starter-blog-next/src/components/Layout.js";
+var _jsxFileName = "/Users/kendallstrautman/Forestry/tina/tina-test-sites/brevifolia-next-tinacms/src/components/Layout.js";
 
 
 
 
 function Layout(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "".concat(_styles_components_layout_scss__WEBPACK_IMPORTED_MODULE_3___default.a.layout, " ").concat(props.pathname == "/info" && _styles_components_layout_scss__WEBPACK_IMPORTED_MODULE_3___default.a.info_page),
-    style: {
-      backgroundColor: "".concat(props.pathname == "/info" && _config_json__WEBPACK_IMPORTED_MODULE_2__.primary_color)
-    },
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
@@ -1535,18 +1531,30 @@ function Layout(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 11
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: _styles_components_layout_scss__WEBPACK_IMPORTED_MODULE_3___default.a.content,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 12
     },
     __self: this
   }, props.children));
 }
+/**
+ * 
+ * 
+ * className={`${layoutStyles.layout} ${
+          props.pathname == "/info" &&
+          layoutStyles.info_page}`}
+        style={{
+          backgroundColor: `${
+          props.pathname == "/info" && 
+          data.primary_color}`
+  }}
+ */
 
 /***/ }),
 
@@ -1565,30 +1573,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_BlogList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/BlogList */ "./components/BlogList.js");
 /* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/index.scss */ "./styles/index.scss");
 /* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_index_scss__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/kendallstrautman/Forestry/initial-project/starter-blog-next/src/pages/index.js";
+var _jsxFileName = "/Users/kendallstrautman/Forestry/tina/tina-test-sites/brevifolia-next-tinacms/src/pages/index.js";
 
 
 
 
 
 var Index = function Index(props) {
+  console.log(props);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    pathname: props.url.pathname,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_BlogList__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_BlogList__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
     },
     __self: this
   })));
@@ -1741,14 +1749,14 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/kendallstrautman/Forestry/initial-project/starter-blog-next/src/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /Users/kendallstrautman/Forestry/tina/tina-test-sites/brevifolia-next-tinacms/src/pages/index.js */"./pages/index.js");
 
 
 /***/ }),
