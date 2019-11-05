@@ -2,6 +2,7 @@ import * as React from 'react'
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import { useCMS, useCMSForm, useWatchFormValues } from 'react-tinacms'
+import * as yaml from 'js-yaml'
 
 import blogStyles from "../../styles/pages/blog.scss";
 import Layout from '../../components/Layout'
@@ -75,12 +76,19 @@ export default function Page(props) {
     },
   })
 
-  //TODO - fix, not currently writing to disk
+  function toMarkdownString(formValues) {
+    return (
+      '---\n' +
+      yaml.dump(formValues.frontmatter) +
+      '---\n' +
+      (formValues.markdownBody || '')
+    )
+  }
+
   const writeToDisk = React.useCallback(formState => {
-    console.log(formState.values)
     cms.api.git.onChange({
       fileRelativePath: props.fileRelativePath,
-      content: JSON.stringify(formState.values),
+      content: toMarkdownString(formState.values),
     })
   }, [])
 
@@ -124,7 +132,7 @@ Page.getInitialProps = async function(ctx) {
   const data = matter(content.default);
 
   return {
-    fileRelativePath: `/posts/${slug}.md`,
+    fileRelativePath: `src/posts/${slug}.md`,
     ...data
   }
 }
