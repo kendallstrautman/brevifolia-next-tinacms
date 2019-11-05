@@ -37,7 +37,7 @@ const BlogList = () => {
 
   function reformatDate(fullDate) {
     const date = new Date(fullDate)
-    return fullDate.toDateString().slice(4);
+    return date.toDateString().slice(4);
   }
 
   function renderPosts(posts) {
