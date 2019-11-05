@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import { useCMS, useCMSForm, useWatchFormValues } from 'react-tinacms'
@@ -10,33 +10,44 @@ export default function Page(props) {
   // TINA CMS Config ---------------------------
 
   const cms = useCMS()
-  console.log(cms)
   const [post, form] = useCMSForm({
     id: props.fileRelativePath, // needs to be unique
     label: 'Edit Post',
 
     // starting values for the post object
     initialValues: {
-      title: props.data.title,
-      data: props.data.date,
-      author: props.data.author,
+      fileRelativePath: props.fileRelativePath,
+      frontmatter: props.data,
       markdownBody: props.content
     },
 
     // field definition
     fields: [
       {
-        name: 'title',
+        label: "Hero Image",
+        name: 'frontmatter.hero_image',
+        component: "image",
+        // Generate the frontmatter value based on the filename
+        parse: filename => `../static/${filename}`,
+  
+        // Decide the file upload directory for the post
+        uploadDir: () => "/src/static/",
+  
+        // Generate the src attribute for the preview image.
+        previewSrc: data => `/static/${data.frontmatter.hero_image}`,
+      },
+      {
+        name: 'frontmatter.title',
         label: 'Title',
         component: 'text',
       },
       {
-        name: 'date',
+        name: 'frontmatter.date',
         label: 'Date',
         component: 'date',
       },
       {
-        name: 'author',
+        name: 'frontmatter.author',
         label: 'Author',
         component: 'text',
       },
@@ -64,11 +75,12 @@ export default function Page(props) {
     },
   })
 
+  //TODO - fix, not currently writing to disk
   const writeToDisk = React.useCallback(formState => {
-    console.log(cms)
-    cms.api.git.writeToDisk({
+    console.log(formState.values)
+    cms.api.git.onChange({
       fileRelativePath: props.fileRelativePath,
-      content: JSON.stringify({ title: formState.values.title }),
+      content: JSON.stringify(formState.values),
     })
   }, [])
 
@@ -81,27 +93,24 @@ export default function Page(props) {
     return date.toDateString().slice(4);
   }
 
-  const frontmatter = props.data
-  const markdownBody = props.content
-
   return (
       <Layout>
       <article className={blogStyles.blog}>
           <figure className={blogStyles.blog__hero}>
           <img
-              src={frontmatter.hero_image}
-              alt={`blog_hero_${frontmatter.title}`}
+              src={post.frontmatter.hero_image}
+              alt={`blog_hero_${post.frontmatter.title}`}
           />
           </figure>
           <div className={blogStyles.blog__info}>
-          <h1>{post.title}</h1>
-          <h3>{reformatDate(frontmatter.date)}</h3>
+          <h1>{post.frontmatter.title}</h1>
+          <h3>{reformatDate(post.frontmatter.date)}</h3>
           </div>
           <div className={blogStyles.blog__body}>
-          <ReactMarkdown source={markdownBody} />
+          <ReactMarkdown source={post.markdownBody} />
           </div>
           <h2 className={blogStyles.blog__footer}>
-          Written By: {frontmatter.author}
+          Written By: {post.frontmatter.author}
           </h2>
       </article>
       </Layout>
