@@ -13,7 +13,7 @@ export default function Layout(props) {
         color: `${props.pathname == "info" && 'white'}`
       }}
     >
-      <Header />
+      <Header siteTitle={props.siteTitle} />
       <div className={layoutStyles.content}>{props.children}</div>
     </section>
   );

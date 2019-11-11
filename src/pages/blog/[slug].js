@@ -8,6 +8,7 @@ import blogStyles from "../../styles/pages/blog.scss";
 import Layout from '../../components/Layout'
 
 export default function Page(props) {
+
 // TINA CMS Config ---------------------------
   function toMarkdownString(formValues) {
     return (
@@ -101,7 +102,7 @@ export default function Page(props) {
   }
 
   return (
-      <Layout>
+      <Layout siteTitle={props.title}>
       <article className={blogStyles.blog}>
           <figure className={blogStyles.blog__hero}>
           <img
@@ -128,10 +129,12 @@ export default function Page(props) {
 Page.getInitialProps = async function(ctx) {
   const { slug } = ctx.query
   const content = await import(`../../posts/${slug}.md`)
+  const config = await import(`../../data/config.json`)
   const data = matter(content.default);
 
   return {
     fileRelativePath: `src/posts/${slug}.md`,
+    title: config.title,
     ...data
   }
 }

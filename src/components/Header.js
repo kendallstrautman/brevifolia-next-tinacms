@@ -1,7 +1,7 @@
 import Link from "next/link";
 import headerStyles from "../styles/components/header.scss";
 
-export default function Header() {
+export default function Header(props) {
   return (
     <header className={headerStyles.header}>
       <nav
@@ -10,7 +10,7 @@ export default function Header() {
         aria-label="main navigation"
       >
         <Link href="/">
-          <h1>Modern Nomad</h1>
+          <h1>{props.siteTitle}</h1>
         </Link>
         <div>
           <Link href={`${typeof window !== "undefined" &&

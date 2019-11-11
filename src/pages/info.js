@@ -73,7 +73,7 @@ export default function Info(props) {
 // END Tina CMS config -----------------------------
 
   return (
-    <Layout pathname='info' bgColor={data.frontmatter.background_color}>
+    <Layout pathname='info' bgColor={data.frontmatter.background_color} siteTitle={props.title}>
       <section className={infoStyles.info_blurb}>
         <ReactMarkdown source={data.markdownBody} />
       </section>
@@ -84,10 +84,12 @@ export default function Info(props) {
 
 Info.getInitialProps = async function() {
   const content = await import(`../data/info.md`)
+  const config = await import(`../data/config.json`)
   const data = matter(content.default)
 
   return {
     fileRelativePath: `src/data/info.md`,
+    title: config.title,
     ...data
   }
 }
