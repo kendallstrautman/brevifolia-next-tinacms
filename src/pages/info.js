@@ -1,13 +1,22 @@
 import { useCMS, useCMSForm, useWatchFormValues } from 'react-tinacms'
+import matter from "gray-matter";
+import ReactMarkdown from "react-markdown";
+import * as yaml from 'js-yaml'
 
 import Layout from "../components/Layout";
 import infoStyles from "../styles/pages/info.scss";
 
 export default function Info(props) {
-  const contactData = props.contact
-  
 
   // TINA CMS Config ---------------------------
+  function toMarkdownString(formValues) {
+    return (
+      '---\n' +
+      yaml.dump(formValues.frontmatter) +
+      '---\n' +
+      (formValues.markdownBody || '')
+    )
+  }
   
   const cms = useCMS()
   const [data, form] = useCMSForm({
@@ -17,20 +26,16 @@ export default function Info(props) {
     // starting values for the post object
     initialValues: {
       fileRelativePath: props.fileRelativePath,
-      contactData: props.contact,
+      frontmatter: props.data,
+      markdownBody: props.content,
     },
 
     // field definition
     fields: [
       {
-        name: 'contactData.website_url',
-        label: 'Site url',
-        component: 'text',
-      },
-      {
-        name: 'contactData.made_with_url',
-        label: 'Made with url',
-        component: 'text',
+        name: 'markdownBody',
+        label: 'Info Content',
+        component: 'markdown',
       },
       
     ],
@@ -40,7 +45,7 @@ export default function Info(props) {
       return cms.api.git
         .writeToDisk({
           fileRelativePath: props.fileRelativePath,
-          content: JSON.stringify(formState.values),
+          content: toMarkdownString(formState.values),
         })
         .then(() => {
           return cms.api.git.commit({
@@ -52,12 +57,10 @@ export default function Info(props) {
   })
 
   const writeToDisk = React.useCallback(formState => {
-    console.log(JSON.stringify({ contactData: formState.values.contactData}))
-    // console.log(props.fileRelativePath)
-    console.log(cms)
+    
     cms.api.git.writeToDisk({
       fileRelativePath: props.fileRelativePath,
-      content: JSON.stringify({ contactData: formState.values.contactData}),
+      content: toMarkdownString(formState.values),
     })
   }, [])
 
@@ -68,38 +71,7 @@ export default function Info(props) {
   return (
     <Layout pathname='info'>
       <section className={infoStyles.info_blurb}>
-        <h2>
-          This blog was created using{" "}
-          <a href={data.contactData.website_url}>Forestry</a> &{" "}
-          <a href={data.contactData.made_with_url}>Gatsby </a>
-          <br />
-          <br />
-          To get started, import this site into Forestry or checkout the
-          repository.
-        </h2>
-        <ul>
-          <li>
-            <p>
-              <a href={`mailto:${contactData.email}`}>
-                Email: {contactData.email}
-              </a>
-            </p>
-          </li>
-          <li>
-            <p>
-              <a href={contactData.twitter_url}>
-                Twitter: {contactData.twitter_handle}
-              </a>
-            </p>
-          </li>
-          <li>
-            <p>
-              <a href={contactData.github_url}>
-                Github: {contactData.github_handle}
-              </a>
-            </p>
-          </li>
-        </ul>
+        <ReactMarkdown source={data.markdownBody} />
       </section>
     </Layout>
   );
@@ -107,10 +79,11 @@ export default function Info(props) {
 
 
 Info.getInitialProps = async function() {
-  const content = await import(`../data/info.json`)
+  const content = await import(`../data/info.md`)
+  const data = matter(content.default)
 
   return {
-    fileRelativePath: `src/data/info.json`,
-    ...content
+    fileRelativePath: `src/data/info.md`,
+    ...data
   }
 }
