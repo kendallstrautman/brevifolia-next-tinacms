@@ -1,19 +1,16 @@
 import Header from "./Header";
-import data from "../../config.json";
 import layoutStyles from "../styles/components/layout.scss";
 
 export default function Layout(props) {
-
   return (
     <section
       className={`${layoutStyles.layout} ${
-        props.pathname == "/info" &&
+        props.pathname == "info" &&
         layoutStyles.info_page}`
       }
       style={{
-        backgroundColor: `${
-        props.pathname == "/info" && 
-        data.primary_color}`
+        backgroundColor: `${props.bgColor && props.bgColor}`,
+        color: `${props.pathname == "info" && 'white'}`
       }}
     >
       <Header />
@@ -21,16 +18,3 @@ export default function Layout(props) {
     </section>
   );
 }
-
-/**
- * 
- * 
- * className={`${layoutStyles.layout} ${
-          props.pathname == "/info" &&
-          layoutStyles.info_page}`}
-        style={{
-          backgroundColor: `${
-          props.pathname == "/info" && 
-          data.primary_color}`
-  }}
- */

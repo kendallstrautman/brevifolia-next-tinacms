@@ -1,6 +1,5 @@
 {
   "title": "Modern Nomad",
   "description": "Starter blog using Tina CMS with Next.js.",
-  "primary_color": "#AEC4BE",
   "repository_url": "https://github.com/kendallstrautman/brevifolia-next-tinacms"
 }

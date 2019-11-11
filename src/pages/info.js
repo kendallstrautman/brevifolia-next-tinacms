@@ -17,7 +17,6 @@ export default function Info(props) {
       (formValues.markdownBody || '')
     )
   }
-  
   const cms = useCMS()
   const [data, form] = useCMSForm({
     id: props.fileRelativePath, // needs to be unique
@@ -32,6 +31,11 @@ export default function Info(props) {
 
     // field definition
     fields: [
+      {
+        name: 'frontmatter.background_color',
+        label: 'Background Color',
+        component: 'color'
+      },
       {
         name: 'markdownBody',
         label: 'Info Content',
@@ -69,7 +73,7 @@ export default function Info(props) {
 // END Tina CMS config -----------------------------
 
   return (
-    <Layout pathname='info'>
+    <Layout pathname='info' bgColor={data.frontmatter.background_color}>
       <section className={infoStyles.info_blurb}>
         <ReactMarkdown source={data.markdownBody} />
       </section>
