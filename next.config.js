@@ -9,4 +9,10 @@ module.exports = withSass({
     });
     return config;
   },
+   exportPathMap: function() {
+    return {
+      '/': { page : '/'},
+      "/info": { page: "/info"}
+    }
+  }
 });
