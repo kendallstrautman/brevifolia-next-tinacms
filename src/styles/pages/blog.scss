@@ -9,9 +9,13 @@
     height: 60vh;
     width: 100%;
     margin: 0;
+    overflow: hidden;
     img {
       margin-bottom: 0;
       object-fit: cover;
+      min-width: 100%;
+      min-height: 100%;
+      object-position: center;
     }
   }
   
@@ -98,9 +102,6 @@
     .blog__hero {
       min-height: 600px;
       height: 75vh;
-      img {
-        min-width: 100%;
-      }
     }
     .blog__info {
       text-align: center;
