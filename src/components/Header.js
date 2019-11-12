@@ -1,11 +1,10 @@
 import Link from "next/link";
-import headerStyles from "../styles/components/header.scss";
 
 export default function Header(props) {
   return (
-    <header className={headerStyles.header}>
+    <header className="header">
       <nav
-        className={headerStyles.nav}
+        className="nav"
         role="navigation"
         aria-label="main navigation"
       >
@@ -22,6 +21,45 @@ export default function Header(props) {
           </Link>
         </div>
       </nav>
+      <style jsx>
+        {`
+          .header h1 {
+            margin-bottom: 0;
+          }
+
+          .nav {
+            padding: 1.5rem 1.25rem;
+            border-bottom: 1px solid #ebebeb;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+          }
+
+          .nav img {
+            margin-bottom: 0;
+          }
+
+          @media (min-width: 768px) {
+            .header {
+              height: 100vh;
+              position: fixed;
+              left: 0;
+              top: 0;
+            }
+
+            .nav {
+              padding: 2rem;
+              width: 30vw;
+              height: 100%;
+              border-right: 1px solid #ebebeb;
+              border-bottom: none;
+              flex-direction: column;
+              align-items: flex-start;
+            }
+          }
+        `}
+      </style>
     </header>
   );
 }
