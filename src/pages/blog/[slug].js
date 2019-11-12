@@ -4,7 +4,6 @@ import ReactMarkdown from "react-markdown";
 import { useCMS, useCMSForm, useWatchFormValues } from 'react-tinacms'
 import * as yaml from 'js-yaml'
 
-import blogStyles from "../../styles/pages/blog.scss";
 import Layout from '../../components/Layout'
 
 export default function Page(props) {

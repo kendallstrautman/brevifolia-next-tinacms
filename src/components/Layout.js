@@ -1,5 +1,4 @@
 import Header from "./Header";
-import layoutStyles from "../styles/components/layout.scss";
 
 export default function Layout(props) {
   return (
