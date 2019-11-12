@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 import * as yaml from 'js-yaml'
 
 import Layout from "../components/Layout";
-import infoStyles from "../styles/pages/info.scss";
+
 
 export default function Info(props) {
 
@@ -74,9 +74,28 @@ export default function Info(props) {
 
   return (
     <Layout pathname='info' bgColor={data.frontmatter.background_color} siteTitle={props.title}>
-      <section className={infoStyles.info_blurb}>
+      <section className="info_blurb">
         <ReactMarkdown source={data.markdownBody} />
       </section>
+      <style jsx>{`
+        .info_blurb {
+          max-width: 800px;
+          padding: 1.5rem 1.25rem;
+        }
+        
+        @media (min-width: 768px) {
+          .info_blurb {
+            padding: 2rem;
+          }
+        }
+        
+        @media (min-width: 1440px) {
+          .info_blurb {
+            padding: 3rem;
+          }
+        }
+      `}</style>
+
     </Layout>
   );
 }
