@@ -132,6 +132,7 @@ export default function Page(props) {
             height: 60vh;
             width: 100%;
             margin: 0;
+            overflow: hidden;
           }
 
           .blog__hero img {
