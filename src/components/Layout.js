@@ -1,4 +1,5 @@
 import Header from "./Header";
+import Meta from './Meta'
 import layoutStyles from "../styles/components/layout.scss";
 
 export default function Layout(props) {
@@ -13,8 +14,11 @@ export default function Layout(props) {
         color: `${props.pathname == "info" && 'white'}`
       }}
     >
+      <Meta />
       <Header siteTitle={props.siteTitle} />
-      <div className={layoutStyles.content}>{props.children}</div>
+      <div className={layoutStyles.content}>
+        {props.children}
+      </div>
     </section>
   );
 }
