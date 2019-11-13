@@ -46,7 +46,8 @@ This will start a dev server, navigate to localhost:3000. **Note** that the scri
 ## Project Structure 
 
 - Site-level configuration is stored in `data/config.json`. This is editable by Tina when you are on the home page.
-- Edit styles via `src/styles/...`. Note that some components are using styled-jsx, I'm in the process of converting the whole site over to styled-jsx but for now its a mix of scss & css-in-js
+- Edit styles within each component or page file within the `<style jsx>` tags. 
+- Global styles live in the `Meta` component. 
 - `src/posts/`contains all your markdown blog posts.
 - `src/static/` is where you images live and will get uploaded.
 - `src/pages` is where you page components live. 
