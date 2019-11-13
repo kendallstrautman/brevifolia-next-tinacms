@@ -1,7 +1,6 @@
 const glob = require('glob')
 
 module.exports = ({
-  cssModules: true,
   webpack: function(config) {
     config.module.rules.push({
       test: /\.md$/,
