@@ -2,7 +2,6 @@ import { useCMS, useCMSForm, useWatchFormValues } from 'react-tinacms'
 
 import Layout from "../components/Layout";
 import BlogList from "../components/BlogList";
-import "../styles/index.scss";
 
 const Index = (props) => {
   // TINA CMS Config ---------------------------

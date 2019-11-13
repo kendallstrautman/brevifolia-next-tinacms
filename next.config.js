@@ -1,8 +1,6 @@
-const withSass = require("@zeit/next-sass");
 const glob = require('glob')
 
-module.exports = withSass({
-  cssModules: true,
+module.exports = ({
   webpack: function(config) {
     config.module.rules.push({
       test: /\.md$/,
