@@ -65,7 +65,7 @@ const Index = (props) => {
 
 // END Tina CMS config -----------------------------
   return (
-    <Layout pathname="/" siteTitle={data.title}>
+    <Layout pathname="/" siteTitle={data.title} siteDescription={data.description}>
       <section>
         <BlogList />
       </section>
