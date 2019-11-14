@@ -19,6 +19,7 @@ export default function Meta() {
                     overflow-y: scroll;
                     }
                     body {
+                    margin: 0;
                     font-family: "Work Sans", "Helvetica Neue", Helvetica, sans-serif;
                     overflow-x: hidden;
                     color: #000;
