@@ -95,7 +95,6 @@ export default function Info(props) {
           }
         }
       `}</style>
-
     </Layout>
   );
 }

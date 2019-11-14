@@ -1,5 +1,4 @@
 import Link from "next/link";
-// import headerStyles from "../styles/components/header.scss";
 
 export default function Header(props) {
   return (
