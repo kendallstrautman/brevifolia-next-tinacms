@@ -1,7 +1,7 @@
 {
   "name": "foresry-starter-blog-next",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Forestry & Next",
+  "description": "A simple starter to get up and developing quickly with TinaCMS & Next",
   "license": "MIT",
   "version": "0.1.0",
   "author": "@kendallstraut",
@@ -25,7 +25,6 @@
     "gray-matter": "^4.0.2",
     "moment": "^2.24.0",
     "next": "^9.0.2",
-    "node-sass": "^4.12.0",
     "raw-loader": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -39,10 +38,10 @@
   },
   "keywords": [
     "next",
-    "forestry"
+    "tinacms"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kendallstrautman/starter-blog-next"
+    "url": "https://github.com/kendallstrautman/brevifolia-next-tinacms"
   }
 }
