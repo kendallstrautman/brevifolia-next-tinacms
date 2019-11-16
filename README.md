@@ -2,7 +2,7 @@
   <a style="padding-right: 16px;" href="https://tinacms.org">
     <img src="src/static/logos/Logo_Ellipse.svg" width="55" height="38">
   </a>
-  <a href="https://www.gatsbyjs.org/">
+  <a href="https://www.nextjs.org/">
     <img src="src/static/logos/next-js.svg" width="55" height="36">
   </a>
 </p>
