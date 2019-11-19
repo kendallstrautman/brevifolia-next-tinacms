@@ -17,8 +17,6 @@
   "dependencies": {
     "@tinacms/api-git": "^0.1.1-canary.182",
     "@tinacms/git-client": "^0.2.0",
-    "@zeit/next-css": "^1.0.1",
-    "@zeit/next-sass": "^1.0.1",
     "concurrently": "^5.0.0",
     "dotenv": "^8.2.0",
     "glob": "^7.1.6",
