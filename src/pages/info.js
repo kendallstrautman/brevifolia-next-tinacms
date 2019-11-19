@@ -4,19 +4,12 @@ import ReactMarkdown from "react-markdown";
 import * as yaml from 'js-yaml'
 
 import Layout from "../components/Layout";
+import toMarkdownString from '../utils/toMarkdownString'
 
 
 export default function Info(props) {
 
   // TINA CMS Config ---------------------------
-  function toMarkdownString(formValues) {
-    return (
-      '---\n' +
-      yaml.dump(formValues.frontmatter) +
-      '---\n' +
-      (formValues.markdownBody || '')
-    )
-  }
   const cms = useCMS()
   const [data, form] = useCMSForm({
     id: props.fileRelativePath, // needs to be unique
@@ -61,7 +54,6 @@ export default function Info(props) {
   })
 
   const writeToDisk = React.useCallback(formState => {
-    
     cms.api.git.writeToDisk({
       fileRelativePath: props.fileRelativePath,
       content: toMarkdownString(formState.values),
