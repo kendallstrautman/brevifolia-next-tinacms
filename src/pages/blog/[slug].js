@@ -73,9 +73,6 @@ export default function Page(props) {
           })
         })
     },
-  },
-  {
-
   })
 
   const writeToDisk = React.useCallback(formState => {
