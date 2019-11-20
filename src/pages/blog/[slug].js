@@ -1,7 +1,7 @@
 import * as React from 'react'
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
-import { useCMS, useCMSForm, useWatchFormValues } from 'react-tinacms'
+import { useCMS, useLocalForm, useWatchFormValues } from 'react-tinacms'
 
 import Layout from '../../components/Layout'
 import toMarkdownString from '../../utils/toMarkdownString'
@@ -10,7 +10,7 @@ export default function Page(props) {
 
   // TINA CMS Config ---------------------------
   const cms = useCMS()
-  const [post, form] = useCMSForm({
+  const [post, form] = useLocalForm({
     id: props.fileRelativePath, // needs to be unique
     label: 'Edit Post',
 
@@ -73,6 +73,9 @@ export default function Page(props) {
           })
         })
     },
+  },
+  {
+
   })
 
   const writeToDisk = React.useCallback(formState => {
