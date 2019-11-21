@@ -10,6 +10,8 @@
   Brevifolia
 </h1>
 
+## Note - there is an issue with the forms not rendering when using react-tinacms 0.9.0. The issue has been fixed and will be released next week. For now, stay on the older versions of tina currently in master.
+
 ## About
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/314f6fb1-b4a6-484a-ad3d-c26663a63bca/deploy-status)](https://app.netlify.com/sites/brevifolia-next-tinacms/deploys)
