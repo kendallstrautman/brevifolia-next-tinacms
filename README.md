@@ -10,7 +10,9 @@
   Brevifolia
 </h1>
 
-## Note - there is an issue with the forms not rendering when using react-tinacms 0.9.0. The issue has been fixed and will be released next week. For now, stay on the older versions of tina currently in master.
+### Note 🐞
+
+there is an issue with the forms not rendering when using react-tinacms 0.9.0. The issue has been fixed and will be released next week. For now, stay on the older versions of tina currently in master.
 
 ## About
 
