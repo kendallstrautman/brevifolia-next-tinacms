@@ -12,7 +12,7 @@
 
 ### Note 🐞
 
-There is an issue with the forms not rendering when using react-tinacms 0.9.0. The issue has been fixed and will be in next week's Tina release. For now, stay on the older versions of tina currently in master.
+11.22.19: There is an issue with the forms not rendering when using react-tinacms 0.9.0. The issue has been fixed and will be in next week's Tina release. For now, stay on the older versions of tina currently in master.
 
 ## About
 
