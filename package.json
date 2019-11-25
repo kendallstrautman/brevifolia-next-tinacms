@@ -15,21 +15,23 @@
     "forestry-preview": "next src -p 8080 -H 0.0.0.0"
   },
   "dependencies": {
-    "@tinacms/api-git": "^0.1.1-canary.182",
-    "@tinacms/git-client": "^0.2.0",
+    "@tinacms/api-git": "^0.4.4",
+    "@tinacms/git-client": "^0.4.1",
     "concurrently": "^5.0.0",
     "dotenv": "^8.2.0",
     "glob": "^7.1.6",
     "gray-matter": "^4.0.2",
     "moment": "^2.24.0",
     "next": "^9.0.2",
+    "prop-types": "^15.7.2",
     "raw-loader": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-markdown": "^4.1.0",
-    "react-tinacms": "^0.6.0",
+    "react-tinacms": "^0.9.0",
     "styled-components": "^4.4.1",
-    "tinacms": "^0.6.0",
+    "tinacms": "^0.9.0",
+    "typescript": "^3.7.2",
     "webpack": "^4.37.0"
   },
   "devDependencies": {
