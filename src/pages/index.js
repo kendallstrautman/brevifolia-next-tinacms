@@ -1,4 +1,4 @@
-import { useCMS, useCMSForm, useWatchFormValues } from 'react-tinacms'
+import { useCMS, useLocalForm, useWatchFormValues } from 'react-tinacms'
 import matter from 'gray-matter'
 
 import Layout from "../components/Layout";
@@ -7,7 +7,7 @@ import BlogList from "../components/BlogList";
 const Index = (props) => {
   // TINA CMS Config ---------------------------
   const cms = useCMS()
-  const [data, form] = useCMSForm({
+  const [data, form] = useLocalForm({
     id: props.fileRelativePath, // needs to be unique
     label: 'Site Config',
 
