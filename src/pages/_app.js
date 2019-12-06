@@ -7,7 +7,7 @@ class MyApp extends App {
   constructor() {
     super()
     this.cms = new TinaCMS()
-    const client = new GitClient('http://localhost:3001/___tina')
+    const client = new GitClient('http://localhost:3000/___tina')
     this.cms.registerApi('git', client)
   }
   options = {
