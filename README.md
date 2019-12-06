@@ -10,6 +10,8 @@
   Brevifolia
 </h1>
 
+> Note: As of 12.06.19, the backend is now a custom Express server, as opposed to the tina -git-server. Read more [here](https://tinacms.org/blog/deprecating-tina-git-server/) on those changes.
+
 ## About
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/314f6fb1-b4a6-484a-ad3d-c26663a63bca/deploy-status)](https://app.netlify.com/sites/brevifolia-next-tinacms/deploys)
