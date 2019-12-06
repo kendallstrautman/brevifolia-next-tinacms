@@ -1,7 +1,6 @@
-import { useCMS, useCMSForm, useWatchFormValues } from 'react-tinacms'
+import { useCMS, useCMSForm, useWatchFormValues } from 'tinacms'
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
-import * as yaml from 'js-yaml'
 
 import Layout from "../components/Layout";
 import toMarkdownString from '../utils/toMarkdownString'
