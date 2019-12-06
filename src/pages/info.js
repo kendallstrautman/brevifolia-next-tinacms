@@ -1,4 +1,4 @@
-import { useCMS, useCMSForm, useWatchFormValues } from 'tinacms'
+import { useCMS, useLocalForm, useWatchFormValues } from 'tinacms'
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 
@@ -10,7 +10,7 @@ export default function Info(props) {
 
   // TINA CMS Config ---------------------------
   const cms = useCMS()
-  const [data, form] = useCMSForm({
+  const [data, form] = useLocalForm({
     id: props.fileRelativePath, // needs to be unique
     label: 'Info Page',
 
