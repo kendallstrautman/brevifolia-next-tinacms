@@ -1,4 +1,4 @@
-import { useCMS, useLocalForm, useWatchFormValues } from 'react-tinacms'
+import { useCMS, useLocalForm, useWatchFormValues } from 'tinacms'
 import matter from 'gray-matter'
 
 import Layout from "../components/Layout";
