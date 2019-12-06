@@ -6,8 +6,9 @@
   "version": "0.1.0",
   "author": "@kendallstraut",
   "scripts": {
-    "next-dev": "next src",
-    "develop": "node server.js",
+    "dev-next": "next src",
+    "dev": "node server.js",
+    "develop": "yarn dev",
     "build": "next build src",
     "start-next": "next start src",
     "start": "cross-env NODE_ENV=production node server.js",
