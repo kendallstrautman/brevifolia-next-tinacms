@@ -34,7 +34,7 @@
 		"react-dom": "^16.8.6",
 		"react-markdown": "^4.1.0",
 		"styled-components": "^4.4.1",
-		"tinacms": "^0.13.0",
+		"tinacms": "^0.16.0",
 		"typescript": "^3.7.2",
 		"webpack": "^4.37.0"
 	},
