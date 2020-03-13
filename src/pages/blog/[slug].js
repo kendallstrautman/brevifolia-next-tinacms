@@ -214,7 +214,7 @@ BlogTemplate.getInitialProps = async function(ctx) {
 		markdownFile: {
 			fileRelativePath: `src/posts/${slug}.md`,
 			frontmatter: data.data,
-			markdownBody: data.markdownFile
+			markdownBody: data.content
 		},
 		title: config.default.title
 	}

@@ -61,7 +61,7 @@ Info.getInitialProps = async function() {
 		markdownFile: {
 			fileRelativePath: `src/data/info.md`,
 			frontmatter: data.data,
-			markdownBody: data.markdownFile
+			markdownBody: data.content
 		},
 		title: config.default.title
 	}
