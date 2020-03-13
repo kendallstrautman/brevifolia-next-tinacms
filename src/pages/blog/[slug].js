@@ -1,26 +1,12 @@
 import * as React from 'react'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
-import { useCMS, useLocalForm, useWatchFormValues } from 'tinacms'
+import { useLocalMarkdownForm } from 'next-tinacms-markdown'
 
 import Layout from '../../components/Layout'
-import toMarkdownString from '../../utils/toMarkdownString'
 
 export default function BlogTemplate(props) {
-	// TINA CMS Config ---------------------------
-	const cms = useCMS()
-	const [post, form] = useLocalForm({
-		id: props.fileRelativePath, // needs to be unique
-		label: 'Edit Post',
-
-		// starting values for the post object
-		initialValues: {
-			fileRelativePath: props.fileRelativePath,
-			frontmatter: props.data,
-			markdownBody: props.content
-		},
-
-		// field definition
+	const formOptions = {
 		fields: [
 			{
 				label: 'Hero Image',
@@ -55,34 +41,10 @@ export default function BlogTemplate(props) {
 				label: 'Blog Body',
 				component: 'markdown'
 			}
-		],
+		]
+	}
 
-		// save & commit the file when the "save" button is pressed
-		onSubmit(data) {
-			return cms.api.git
-				.writeToDisk({
-					fileRelativePath: props.fileRelativePath,
-					content: toMarkdownString(formState.values)
-				})
-				.then(() => {
-					return cms.api.git.commit({
-						files: [props.fileRelativePath],
-						message: `Commit from Tina: Update ${data.fileRelativePath}`
-					})
-				})
-		}
-	})
-
-	const writeToDisk = React.useCallback(formState => {
-		cms.api.git.onChange({
-			fileRelativePath: props.fileRelativePath,
-			content: toMarkdownString(formState.values)
-		})
-	}, [])
-
-	useWatchFormValues(form, writeToDisk)
-
-	// END Tina CMS config -----------------------------
+	const [post] = useLocalMarkdownForm(props.markdownFile, formOptions)
 
 	function reformatDate(fullDate) {
 		const date = new Date(fullDate)
@@ -249,8 +211,11 @@ BlogTemplate.getInitialProps = async function(ctx) {
 	const data = matter(content.default)
 
 	return {
-		fileRelativePath: `src/posts/${slug}.md`,
-		title: config.title,
-		...data
+		markdownFile: {
+			fileRelativePath: `src/posts/${slug}.md`,
+			frontmatter: data.data,
+			markdownBody: data.markdownFile
+		},
+		title: config.default.title
 	}
 }
