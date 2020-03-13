@@ -5,17 +5,23 @@ const gitApi = require('@tinacms/api-git')
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
-const app = next({ 
+const app = next({
   dev,
-  dir: './src'
- })
+  dir: './src',
+})
 const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
   const server = express()
 
   server.use(cors())
-  server.use('/___tina', gitApi.router())
+  server.use(
+    '/___tina',
+    gitApi.router({
+      pathToRepo: process.cwd(),
+      pathToContent: '',
+    })
+  )
 
   server.all('*', (req, res) => {
     return handle(req, res)

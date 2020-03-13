@@ -17,8 +17,8 @@
 		"forestry-preview": "next src -p 8080 -H 0.0.0.0"
 	},
 	"dependencies": {
-		"@tinacms/api-git": "^0.4.6",
-		"@tinacms/git-client": "^0.4.1",
+		"@tinacms/api-git": "^0.7.0",
+		"@tinacms/git-client": "^0.6.0",
 		"cors": "^2.8.5",
 		"dotenv": "^8.2.0",
 		"express": "^4.17.1",
