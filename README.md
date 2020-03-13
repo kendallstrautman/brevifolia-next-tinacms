@@ -10,7 +10,7 @@
   Brevifolia
 </h1>
 
-> Note: As of 12.06.19, the backend is now a custom Express server, as opposed to the tina -git-server. Read more [here](https://tinacms.org/blog/deprecating-tina-git-server/) on those changes.
+> Note: 03.13.20 — A lot of updates were recently made that change some fundamental Tina + Next.js configuration. Specifically the new [Media Store](https://github.com/kendallstrautman/brevifolia-next-tinacms/commit/207db822a942532c8288f121b2b2cf6fa13ce919), fixing the [router config](https://github.com/kendallstrautman/brevifolia-next-tinacms/commit/73c1e41f1e947b20ad71cc2ea368854c13f50182), altering how [sidebar options](https://github.com/kendallstrautman/brevifolia-next-tinacms/commit/2b5dfb5493d98162bec7817bf177f92ce568e973) are passed in, and implemented the next-tinacms helper packages to [create forms](https://github.com/kendallstrautman/brevifolia-next-tinacms/commit/eb4c1703500444c444b8d16d6255103a93feaf52) on all pages.
 
 ## About
 
