@@ -6,6 +6,7 @@ import BlogList from '../components/BlogList'
 
 const Index = ({ jsonFile, allBlogs }) => {
   const formOptions = {
+    label: 'Site Config',
     fields: [
       {
         name: 'title',

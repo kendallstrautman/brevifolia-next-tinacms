@@ -7,6 +7,7 @@ import Layout from '../../components/Layout'
 
 export default function BlogTemplate(props) {
   const formOptions = {
+    label: 'Blog Page',
     fields: [
       {
         label: 'Hero Image',
