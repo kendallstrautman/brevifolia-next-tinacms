@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 
 export default function Info(props) {
   const formOptions = {
+    label: 'Info Page',
     fields: [
       {
         name: 'frontmatter.background_color',
