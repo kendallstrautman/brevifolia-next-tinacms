@@ -1,52 +1,52 @@
 {
-	"name": "foresry-starter-blog-next",
-	"private": true,
-	"description": "A simple starter to get up and developing quickly with TinaCMS & Next",
-	"license": "MIT",
-	"version": "0.1.0",
-	"author": "@kendallstraut",
-	"scripts": {
-		"dev-next": "next src",
-		"dev": "node server.js",
-		"develop": "yarn dev",
-		"build": "next build src",
-		"start-next": "next start src",
-		"start": "cross-env NODE_ENV=production node server.js",
-		"export": "next export src",
-		"deploy": "yarn build && yarn export",
-		"forestry-preview": "next src -p 8080 -H 0.0.0.0"
-	},
-	"dependencies": {
-		"@tinacms/api-git": "^0.7.0",
-		"@tinacms/git-client": "^0.6.0",
-		"cors": "^2.8.5",
-		"dotenv": "^8.2.0",
-		"express": "^4.17.1",
-		"glob": "^7.1.6",
-		"gray-matter": "^4.0.2",
-		"moment": "^2.24.0",
-		"next": "^9.0.6",
-		"next-tinacms-json": "^0.3.5",
-		"next-tinacms-markdown": "^0.2.5",
-		"prop-types": "^15.7.2",
-		"raw-loader": "^3.0.0",
-		"react": "^16.8.6",
-		"react-dom": "^16.8.6",
-		"react-markdown": "^4.1.0",
-		"styled-components": "^4.4.1",
-		"tinacms": "^0.16.0",
-		"typescript": "^3.7.2",
-		"webpack": "^4.37.0"
-	},
-	"devDependencies": {
-		"prettier": "^1.18.2"
-	},
-	"keywords": [
-		"next",
-		"tinacms"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/kendallstrautman/brevifolia-next-tinacms"
-	}
+  "name": "foresry-starter-blog-next",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with TinaCMS & Next",
+  "license": "MIT",
+  "version": "0.1.0",
+  "author": "@kendallstraut",
+  "scripts": {
+    "dev-next": "next",
+    "dev": "node server.js",
+    "develop": "yarn dev",
+    "build": "next build",
+    "start-next": "next start",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "export": "next export",
+    "deploy": "yarn build && yarn export"
+  },
+  "dependencies": {
+    "@tinacms/api-git": "^0.7.0",
+    "@tinacms/git-client": "^0.6.6",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "final-form": "^4.19.1",
+    "glob": "^7.1.6",
+    "gray-matter": "^4.0.2",
+    "moment": "^2.24.0",
+    "next": "^9.4.0",
+    "next-tinacms-json": "^0.3.11",
+    "next-tinacms-markdown": "^0.2.11",
+    "prop-types": "^15.7.2",
+    "raw-loader": "^3.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-markdown": "^4.1.0",
+    "styled-components": "^4.4.1",
+    "tinacms": "^0.18.4",
+    "typescript": "^3.7.2",
+    "webpack": "^4.37.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
+  "keywords": [
+    "next",
+    "tinacms"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kendallstrautman/brevifolia-next-tinacms"
+  }
 }
