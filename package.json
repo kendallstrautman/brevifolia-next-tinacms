@@ -6,15 +6,14 @@
   "version": "0.1.0",
   "author": "@kendallstraut",
   "scripts": {
-    "dev-next": "next src",
+    "dev-next": "next",
     "dev": "node server.js",
     "develop": "yarn dev",
-    "build": "next build src",
-    "start-next": "next start src",
+    "build": "next build",
+    "start-next": "next start",
     "start": "cross-env NODE_ENV=production node server.js",
-    "export": "next export src",
-    "deploy": "yarn build && yarn export",
-    "forestry-preview": "next src -p 8080 -H 0.0.0.0"
+    "export": "next export",
+    "deploy": "yarn build && yarn export"
   },
   "dependencies": {
     "@tinacms/api-git": "^0.7.0",

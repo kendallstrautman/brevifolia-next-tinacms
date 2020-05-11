@@ -16,12 +16,12 @@ export default function BlogTemplate(props) {
         parse: filename => `../static/${filename}`,
 
         // Decide the file upload directory for the post
-        uploadDir: () => '/src/public/static/',
+        uploadDir: () => '/public/static/',
 
         // Generate the src attribute for the preview image.
         previewSrc: data => `/static/${data.frontmatter.hero_image}`,
         imageProps: async function upload(files) {
-          const directory = 'src/public/static/'
+          const directory = 'public/static/'
           console.log('file from upload', file)
           let media = await cms.media.store.persist(
             files.map(file => ({
@@ -224,7 +224,7 @@ BlogTemplate.getInitialProps = async function(ctx) {
 
   return {
     markdownFile: {
-      fileRelativePath: `src/posts/${slug}.md`,
+      fileRelativePath: `posts/${slug}.md`,
       frontmatter: data.data,
       markdownBody: data.content,
     },
