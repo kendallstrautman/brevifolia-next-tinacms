@@ -1,7 +1,8 @@
 import * as React from 'react'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
-import { useLocalMarkdownForm } from 'next-tinacms-markdown'
+import { usePlugin } from 'tinacms'
+import { useMarkdownForm } from 'next-tinacms-markdown'
 
 import Layout from '../../components/Layout'
 
@@ -14,25 +15,13 @@ export default function BlogTemplate(props) {
         name: 'frontmatter.hero_image',
         component: 'image',
         // Generate the frontmatter value based on the filename
-        parse: filename => `../static/${filename}`,
+        parse: media => `/static/${media.filename}`,
 
         // Decide the file upload directory for the post
         uploadDir: () => '/public/static/',
 
         // Generate the src attribute for the preview image.
-        previewSrc: data => `/static/${data.frontmatter.hero_image}`,
-        imageProps: async function upload(files) {
-          const directory = 'public/static/'
-          console.log('file from upload', file)
-          let media = await cms.media.store.persist(
-            files.map(file => ({
-              directory,
-              file,
-            }))
-          )
-
-          return media.map(m => `/${m.filename}`)
-        },
+        previewSrc: fullSrc => fullSrc.replace('/public', ''),
       },
       {
         name: 'frontmatter.title',
@@ -57,7 +46,8 @@ export default function BlogTemplate(props) {
     ],
   }
 
-  const [post] = useLocalMarkdownForm(props.markdownFile, formOptions)
+  const [post, form] = useMarkdownForm(props.markdownFile, formOptions)
+  usePlugin(form)
 
   function reformatDate(fullDate) {
     const date = new Date(fullDate)

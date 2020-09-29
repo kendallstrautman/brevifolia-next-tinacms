@@ -1,5 +1,6 @@
 import matter from 'gray-matter'
-import { useLocalJsonForm } from 'next-tinacms-json'
+import { useJsonForm } from 'next-tinacms-json'
+import { usePlugin } from 'tinacms'
 
 import Layout from '../components/Layout'
 import BlogList from '../components/BlogList'
@@ -25,7 +26,8 @@ const Index = ({ jsonFile, allBlogs }) => {
       },
     ],
   }
-  const [data] = useLocalJsonForm(jsonFile, formOptions)
+  const [data, form] = useJsonForm(jsonFile, formOptions)
+  usePlugin(form)
 
   return (
     <Layout

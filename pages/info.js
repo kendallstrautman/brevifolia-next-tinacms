@@ -1,6 +1,7 @@
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
-import { useLocalMarkdownForm } from 'next-tinacms-markdown'
+import { useMarkdownForm } from 'next-tinacms-markdown'
+import { usePlugin } from 'tinacms'
 
 import Layout from '../components/Layout'
 
@@ -20,7 +21,8 @@ export default function Info(props) {
       },
     ],
   }
-  const [data] = useLocalMarkdownForm(props.markdownFile, formOptions)
+  const [data, form] = useMarkdownForm(props.markdownFile, formOptions)
+  usePlugin(form)
 
   return (
     <Layout
