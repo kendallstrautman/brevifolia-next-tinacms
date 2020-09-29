@@ -2,21 +2,26 @@ import React from 'react'
 import App from 'next/app'
 import { TinaProvider, TinaCMS } from 'tinacms'
 import { GitClient, GitMediaStore } from '@tinacms/git-client'
+import { MarkdownFieldPlugin } from 'react-tinacms-editor'
+import { DateFieldPlugin } from 'react-tinacms-date'
 
 class MyApp extends App {
   constructor() {
     super()
-    const client = new GitClient('http://localhost:3000/___tina')
+    const git = new GitClient('http://localhost:3000/___tina')
     this.cms = new TinaCMS({
+      enabled: process.env.NODE_ENV === 'development',
       sidebar: {
         position: 'overlay',
-        hidden: process.env.NODE_ENV === 'production',
       },
       apis: {
-        git: client,
+        git,
       },
-      media: { store: new GitMediaStore(client) },
+      media: new GitMediaStore(git),
     })
+
+    this.cms.plugins.add(MarkdownFieldPlugin)
+    this.cms.plugins.add(DateFieldPlugin)
   }
 
   render() {
