@@ -4358,15 +4358,15 @@ next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-next-tinacms-json@^0.3.14:
-  version "0.3.14"
-  resolved "https://registry.yarnpkg.com/next-tinacms-json/-/next-tinacms-json-0.3.14.tgz#2bee9e5afd524342f1a7556003721031e4830a60"
-  integrity sha512-Umi/sWwcrKkKjQ1vCqs17yMS3ZTHQtv2aAWtKp1gheknq0NQOG8ay5B0kP86YebL0eVu7m6judy+MvWrpGqSiw==
+next-tinacms-json@^0.29.0:
+  version "0.29.0"
+  resolved "https://registry.yarnpkg.com/next-tinacms-json/-/next-tinacms-json-0.29.0.tgz#e27d54b5daf7dd7d5ead2ec785a578db8001058a"
+  integrity sha512-dboVY11NNSBWM4tTLdqpHTrfv48+hBV4cxFPFw1vfSgXjbD4Ywo955o0O15dtch9wKcQg60cMF6ABbauoRESwg==
 
-next-tinacms-markdown@^0.2.14:
-  version "0.2.14"
-  resolved "https://registry.yarnpkg.com/next-tinacms-markdown/-/next-tinacms-markdown-0.2.14.tgz#49ae64b7bc7148ee84019c125d9b478d202c559d"
-  integrity sha512-ZxY2507XuoPhwhC1D1rJngG6phZZvYB8NbnXlFiESS1YNXQT3EvdDBjggYp/7RfzvYQwyru8/dvFvU9Bfddggw==
+next-tinacms-markdown@^0.29.0:
+  version "0.29.0"
+  resolved "https://registry.yarnpkg.com/next-tinacms-markdown/-/next-tinacms-markdown-0.29.0.tgz#ced7f754ac4bc1c2bdb0e627e549139e018fcb40"
+  integrity sha512-YDuyqSaFqqlI6WR6MkW4+pnggY36R7pZip1/ezyWEWR1OkzdraRwgq3r0O1x0zULvgabac9THK9QpWVX7bWeRQ==
   dependencies:
     gray-matter "^4.0.2"
     js-yaml "^3.13.1"
