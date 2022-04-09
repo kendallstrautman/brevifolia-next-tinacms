@@ -24,7 +24,7 @@
     "final-form": "^4.19.1",
     "glob": "^7.1.6",
     "gray-matter": "^4.0.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "next": "^9.4.0",
     "next-tinacms-json": "^0.29.0",
     "next-tinacms-markdown": "^0.29.0",
